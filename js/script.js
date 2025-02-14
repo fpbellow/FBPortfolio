@@ -1,21 +1,24 @@
 import * as THREE from "three";
 import { gsap } from "gsap";
+import { Easing } from "three/examples/jsm/libs/tween.module.js";
 
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(55, window.innerWidth/ window.innerHeight);
 
 const cameraPositions = [
-    new THREE.Vector3(  0.0,  0.0, 12.0 ),
-    new THREE.Vector3(  0.0,  0.0,  5.0 ),
-    new THREE.Vector3( -7.5,  0.0,  5.0 ),
-    new THREE.Vector3(  7.5,  0.0,  5.0 ),
-    new THREE.Vector3(  0.0, -3.5,  5.0 ),
-    new THREE.Vector3(  0.0,  3.5,  5.0 )
+    new THREE.Vector3(  0.0,  0.0, 12.0 ), // wide
+    new THREE.Vector3( -7.5,  0.0,  5.0 ), // left
+    new THREE.Vector3(  0.0,  0.0,  5.0 ), // center
+    new THREE.Vector3(  7.5,  0.0,  5.0 ), // right
+    new THREE.Vector3(  0.0, -3.5,  5.0 ), // bottom
+    new THREE.Vector3(  0.0,  3.5,  5.0 )  // top
 ];
+
+
 var camIndex = 0;
 
-camera.position.copy(cameraPositions[camIndex]);
+camera.position.copy(cameraPositions[1]);
 scene.add(camera);
 
 
@@ -51,40 +54,67 @@ const canvas = document.querySelector("#world");
 const renderer = new THREE.WebGLRenderer({ canvas: canvas });
 renderer.setSize(window.innerWidth, window.innerHeight);
 
+
 function animate(){
     renderer.render(scene, camera);
 }
 
-
 renderer.setAnimationLoop(animate);
 
+const tl = gsap.timeline();
+let transitionCompleted = true;
 
 function moveCamera(camPos)
 {
-    gsap.to(camera.position, 
-        {
-            x: camPos.x,
-            y: camPos.y,
-            z: camPos.z,
-            duration: 1.0
-        });
-};
-
-window.addEventListener('mousedown', function(){
-
-    if(camera.position.z != cameraPositions[0].z)
-        moveCamera(cameraPositions[0]);
-
-    else if(camIndex<cameraPositions.length-1)
-    {
-        camIndex+=1;
-        moveCamera(cameraPositions[camIndex]);
-    }
+    transitionCompleted = false;
+    var mdpt = new THREE.Vector2((camPos.x + camera.position.x)*0.5, (camPos.y + camera.position.y)*0.5);
+    if(camPos === cameraPositions[0])
+        tl.to(camera.position, 
+            {
+                x: camPos.x,
+                y: camPos.y,
+                z: camPos.z,
+                ease: "power1.in"
+            });
     else
     {
-        console.log("cam reset");
-        camIndex=1;
-        moveCamera(cameraPositions[camIndex]);
-    } 
-    console.log(camIndex);
+        tl.to(camera.position,
+            {
+                x: mdpt.x,
+                y: mdpt.y,
+                z: cameraPositions[0].z,
+                ease: "power1.out"
+            });
+        tl.to(camera.position, 
+            {
+                x: camPos.x,
+                y: camPos.y,
+                z: camPos.z,
+                ease: "power1.in",
+                delay: 0.1
+            });
+    
+    }
+    transitionCompleted = true;
+};
+
+window.addEventListener('keydown', function(event){
+    if(transitionCompleted = true) 
+    {
+        if(event.key === 'q')
+            moveCamera(cameraPositions[1]);
+
+        if(event.key === 'w')
+            moveCamera(cameraPositions[2]);
+
+        if(event.key === 'e')
+            moveCamera(cameraPositions[3]);
+
+        if(event.key === 'r')
+            moveCamera(cameraPositions[4]);
+
+        if(event.key === 't')
+            moveCamera(cameraPositions[5]);
+    }
+
 });
