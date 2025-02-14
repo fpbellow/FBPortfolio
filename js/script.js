@@ -1,6 +1,5 @@
 import * as THREE from "three";
 import { gsap } from "gsap";
-import { Easing } from "three/examples/jsm/libs/tween.module.js";
 
 
 const scene = new THREE.Scene();
