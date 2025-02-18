@@ -1,28 +1,27 @@
 import * as THREE from "three";
 import { gsap } from "gsap";
-
+import { CSS3DRenderer, CSS3DObject } from "three/addons/renderers/CSS3DRenderer.js";
 
 const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(55, window.innerWidth/ window.innerHeight);
+const camera = new THREE.PerspectiveCamera( 55, window.innerWidth / window.innerHeight );
 
 const cameraPositions = [
-    new THREE.Vector3(  0.0,  0.0, 12.0 ), // wide
-    new THREE.Vector3( -7.5,  0.0,  5.0 ), // left
-    new THREE.Vector3(  0.0,  0.0,  5.0 ), // center
-    new THREE.Vector3(  7.5,  0.0,  5.0 ), // right
-    new THREE.Vector3(  0.0, -3.5,  5.0 ), // bottom
-    new THREE.Vector3(  0.0,  3.5,  5.0 )  // top
+    new THREE.Vector3(  0.0,  0.0, 1200 ), // wide
+    new THREE.Vector3( -750,  0.0,  500 ), // left
+    new THREE.Vector3(  0.0,  0.0,  500 ), // center
+    new THREE.Vector3(  750,  0.0,  500 ), // right
+    new THREE.Vector3(  0.0, -350,  500 ), // bottom
+    new THREE.Vector3(  0.0,  350,  500 )  // top
 ];
 
-
-var camIndex = 0;
 
 camera.position.copy(cameraPositions[1]);
 scene.add(camera);
 
 
 
-const geometry = new THREE.BoxGeometry(1,1,1);
+
+const geometry = new THREE.BoxGeometry(100,100,100);
 
 const redMat = new THREE.MeshBasicMaterial({color: 'red'})
 const blueMat = new THREE.MeshBasicMaterial({color: 'blue'});
@@ -36,11 +35,11 @@ const rightCubeB = new THREE.Mesh(geometry, blueMat);
 const topCubeP = new THREE.Mesh(geometry, purpleMat);
 const bottomCubeY = new THREE.Mesh(geometry, yellowMat);
 
-leftCubeR.position.x = -7.5;
-rightCubeB.position.x = 7.5;
+leftCubeR.position.x = -750;
+rightCubeB.position.x = 750;
 
-topCubeP.position.y = 3.5;
-bottomCubeY.position.y = -3.5;
+topCubeP.position.y = 350;
+bottomCubeY.position.y = -350;
 
 scene.add(leftCubeR);
 scene.add(midCubeG);
@@ -48,17 +47,36 @@ scene.add(rightCubeB);
 scene.add(topCubeP);
 scene.add(bottomCubeY);
 
+const wGLrenderer = new THREE.WebGLRenderer({ antialias: true});
+wGLrenderer.setSize(window.innerWidth, window.innerHeight);
+document.querySelector('#webgl').appendChild(wGLrenderer.domElement);
 
-const canvas = document.querySelector("#world");
-const renderer = new THREE.WebGLRenderer({ canvas: canvas });
-renderer.setSize(window.innerWidth, window.innerHeight);
+const cssRenderer = new CSS3DRenderer();
+cssRenderer.setSize(window.innerWidth, window.innerHeight);
+cssRenderer.domElement.style.position = 'absolute';
+cssRenderer.domElement.style.top = 0;
+document.querySelector('#css3d').appendChild(cssRenderer.domElement);
+
+const planeElement = document.createElement( 'div' );
+planeElement.innerHTML = 'testing';
+planeElement.style.width =  '10px';
+planeElement.style.height = '10px';
+planeElement.style.fontSize = '20px';
+planeElement.style.color = "orange";
+
+const planeObj = new CSS3DObject( planeElement );
+planeObj.position.set( -7.5, 0, 0 );
+scene.add(planeObj);
+wGLrenderer.setAnimationLoop(animate);
 
 
-function animate(){
-    renderer.render(scene, camera);
+function animate() {
+  requestAnimationFrame(animate);
+  wGLrenderer.render(scene, camera);
+  cssRenderer.render(scene, camera);
 }
 
-renderer.setAnimationLoop(animate);
+
 
 const tl = gsap.timeline();
 let transitionCompleted = true;
