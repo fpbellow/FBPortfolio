@@ -1,6 +1,9 @@
+//https://unblast.com/free-corkboard-texture/
+
 import * as THREE from "three";
 import { gsap } from "gsap";
 import { CSS3DRenderer, CSS3DObject } from "three/addons/renderers/CSS3DRenderer.js";
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera( 55, window.innerWidth / window.innerHeight );
@@ -19,33 +22,20 @@ camera.position.copy(cameraPositions[1]);
 scene.add(camera);
 
 
+const gltfLoadr = new GLTFLoader();
+gltfLoadr.load('../Assets/Models/pinboard.glb', function(gltf) {
+    gltf.scene.scale.set(1200,1200,1200);
+    gltf.scene.position.z = 0;
+    gltf.scene.position.y = 1500;
+    gltf.scene.rotation.x = Math.PI*0.5;
+    gltf.scene.rotation.z = Math.PI*0.5;
 
 
-const geometry = new THREE.BoxGeometry(100,100,100);
+    scene.add(gltf.scene);
+})
 
-const redMat = new THREE.MeshBasicMaterial({color: 'red'})
-const blueMat = new THREE.MeshBasicMaterial({color: 'blue'});
-const greenMat = new THREE.MeshBasicMaterial({color: 'green'});
-const purpleMat = new THREE.MeshBasicMaterial({color: 'purple'});
-const yellowMat = new THREE.MeshBasicMaterial({color: 'yellow'});
-
-const leftCubeR = new THREE.Mesh(geometry, redMat);
-const midCubeG = new THREE.Mesh(geometry, greenMat);
-const rightCubeB = new THREE.Mesh(geometry, blueMat);
-const topCubeP = new THREE.Mesh(geometry, purpleMat);
-const bottomCubeY = new THREE.Mesh(geometry, yellowMat);
-
-leftCubeR.position.x = -750;
-rightCubeB.position.x = 750;
-
-topCubeP.position.y = 350;
-bottomCubeY.position.y = -350;
-
-scene.add(leftCubeR);
-scene.add(midCubeG);
-scene.add(rightCubeB);
-scene.add(topCubeP);
-scene.add(bottomCubeY);
+const al = new THREE.AmbientLight();
+scene.add(al);
 
 const wGLrenderer = new THREE.WebGLRenderer({ antialias: true});
 wGLrenderer.setSize(window.innerWidth, window.innerHeight);
@@ -69,9 +59,7 @@ planeObj.position.set( -7.5, 0, 0 );
 scene.add(planeObj);
 wGLrenderer.setAnimationLoop(animate);
 
-
 function animate() {
-  requestAnimationFrame(animate);
   wGLrenderer.render(scene, camera);
   cssRenderer.render(scene, camera);
 }
