@@ -6,8 +6,6 @@ import { CSS3DRenderer, CSS3DObject } from "three/addons/renderers/CSS3DRenderer
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
 
-
-
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera( 55, window.innerWidth / window.innerHeight, 0.1 , 3200 );
 
