@@ -27,7 +27,7 @@ scene.add(camera);
 
 
 const gltfLoadr = new GLTFLoader();
-gltfLoadr.load('Assets/Models/pinboard.glb', function(gltf) {
+gltfLoadr.load('assets/Models/pinboard.glb', function(gltf) {
     gltf.scene.scale.set(2400,2400,2400);
     gltf.scene.position.z = 0;
     gltf.scene.position.y = 3200;
@@ -128,7 +128,7 @@ pastProjectsSection.innerHTML =`
     Previous project experimenting with Unity's URP and shader graph. Full repo can be found <a href="https://github.com/fpbellow/UnityGraph" target="_blank" style="color: #3f12ff; text-decoration: none;"> here<a/>.
   </div>
   <div class="project-images">
-    <img src="Assets/Images/unitygraph.gif"  height="258" width="458"/>
+    <img src="assets/Images/unitygraph.gif"  height="258" width="458"/>
   </div>
    <h2 class="project-subtitle" > Raytracing: </h2>
   <div class="project-description">
@@ -144,8 +144,8 @@ blenderProjectSection.className = "blender-card";
 blenderProjectSection.innerHTML = `
   <h2 class="project-subtitle" > Blender: </h2>
   <div class="project-images">
-    <img src="Assets/Images/frame147render.png"  height="316" width="916"/>
-    <img src="Assets/Images/blender_preview.png"  height="316" width="916"/>
+    <img src="assets/Images/frame147render.png"  height="316" width="916"/>
+    <img src="assets/Images/blender_preview.png"  height="316" width="916"/>
   </div>
 `;
 
