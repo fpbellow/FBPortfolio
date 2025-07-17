@@ -3860,7 +3860,7 @@ void main() {
       <div class="profile-card__email"><b>fpbellow@gmail.com</b></div>
     </div>
     <div class="profile-card__col profile-card__col--resume">
-      <div class="profile-card__resume"><a>Resume</a></div>
+      <div class="profile-card__resume"><b><a href="https://github.com/fpbellow/FBPortfolio/blob/main/private/Resume.pdf" target="_blank target="_blank" style="color: rgba(0, 0, 0, 0.41); text-decoration: none;">Resume</a></b></div>
     </div>
   </div>
 `;const Cc=document.createElement("div");Cc.className="project-card";Cc.innerHTML=`
