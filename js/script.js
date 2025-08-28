@@ -10,12 +10,12 @@ const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera( 55, window.innerWidth / window.innerHeight, 0.1 , 3200 );
 
 const cameraPositions = [
-    new THREE.Vector3(  0.0,  125.0, 2300 ), // wide
-    new THREE.Vector3(  0.0,  125.0,  900 ), // center
-    new THREE.Vector3(-1300,  850.0, 1000 ), // top left
-    new THREE.Vector3(-1300, -750.0, 1000 ), // bottom left
-    new THREE.Vector3( 1300,  850.0, 1000 ), // top right
-    new THREE.Vector3( 1300, -750.0, 1000 ), // bottom right
+    new THREE.Vector3(  0.0,  100.0, 2300 ), // wide
+    new THREE.Vector3(  60.0, 90.0,  900 ), // center
+    new THREE.Vector3(-1250,  800.0, 1100 ), // top left
+    new THREE.Vector3(-1250, -750.0, 1100 ), // bottom left
+    new THREE.Vector3( 1250,  800.0, 1100 ), // top right
+    new THREE.Vector3( 1250, -750.0, 1100 ), // bottom right
 ];
 
 
@@ -83,11 +83,28 @@ centerCard.innerHTML =  `
   </div>
 `;
 
-const gfxProjectSection = document.createElement('div');
-gfxProjectSection.className = "project-card";
-gfxProjectSection.innerHTML = `
+const dxProjectTitleSection = document.createElement('div');
+dxProjectTitleSection.className = "project-title-card";
+dxProjectTitleSection.innerHTML = `
   <h1 class="project-title">DirectX</h1>
   <div class="project-divider"></div>
+`;
+
+const dxProject1Section = document.createElement('div');
+dxProject1Section.className = "project-card-1";
+dxProject1Section.innerHTML = `
+  <h2 class="project-subtitle"><a href="https://github.com/fpbellow/probe-gl" target="_blank" text-decoration: none;"> • Global Illumination Demo<br/> </a> </h2>
+  <div class="project-description">
+    A small demo using the <a href="https://superhivemarket.com/products/light-bake/" target="_blank" style="color: #3f12ff; text-decoration: none;">Light Bake</a>  Blender addon to generate an irradiance map from the probes of an irradiance volume and implementing such in DirectX 11 along with physical based rendering based off of Frostbite's implementation.
+  </div>
+  <div class="project-images">
+    <img src="https://raw.githubusercontent.com/fpbellow/probe-gl/main/screenshot_image.png" height="412" width="732" alt="Project 8 Screenshot"/>
+  </div>
+`;
+
+const dxProject2Section = document.createElement('div');
+dxProject2Section.className = "project-card-2";
+dxProject2Section.innerHTML = `
   <h2 class="project-subtitle"><a href="https://github.com/fpbellow/CS-6610-Projects" target="_blank" text-decoration: none;"> • CS-6610-Projects<br/> </a> </h2>
   <div class="project-description">
     The series of <a href="https://graphics.cs.utah.edu/courses/cs6610/spring2021/" target="_blank" style="color: #3f12ff; text-decoration: none;"> assignment projects </a> 
@@ -121,7 +138,7 @@ shaderProjectSection.innerHTML = `
 const pastProjectsSection = document.createElement('div');
 pastProjectsSection.className = "past-projects-card";
 pastProjectsSection.innerHTML =`
-  <h1 class="project-title">Past projects</h1>
+  <h1 class="project-title">Other projects</h1>
   <div class="project-divider"></div>
   <h2 class="project-subtitle"> Unity: </h2>
   <div class="project-description">
@@ -152,32 +169,32 @@ blenderProjectSection.innerHTML = `
 const stickyNotes = document.createElement('div');
 stickyNotes.innerHTML =`
 <!-- Profile Navigation -->
-  <div class="sticky-note" style="left:718px; top:265px; padding-top:15px; padding-bottom:40px;">
+  <div class="sticky-note" style="left:718px; top:365px; padding-top:15px; padding-bottom:40px;">
     <a>Navigation</a>
     <a data-nav="directX-slide" class="sticky-nav">• DirectX Projects</a>
     <a data-nav="shader-slide" class="sticky-nav">• Shaders</a>
-    <a data-nav="pProjects-slide" class="sticky-nav">• Past Projects</a>
+    <a data-nav="pProjects-slide" class="sticky-nav">• Other Projects</a>
     <a data-nav="blender-slide" class="sticky-nav">• Blender</a>
   </div>
 
   <!-- DirectX Navigation -->
-  <div class="sticky-note" style="left:-270px; top:-550px">
+  <div class="sticky-note" style="left:-720px; top:-240px">
     <a data-nav="about-me" class="sticky-nav">• About Me</a>
     <a data-nav="shader-slide" class="sticky-nav">• Shaders</a>
-    <a data-nav="pProjects-zoom" class="sticky-nav">• Past Projects</a>
+    <a data-nav="pProjects-zoom" class="sticky-nav">• Other Projects</a>
     <a data-nav="blender-zoom" class="sticky-nav">• Blender</a>
   </div>
 
   <!-- Shaders Navigation -->
-  <div class="sticky-note" style="left:-1300px; top:1050px">
+  <div class="sticky-note" style="left:-1250px; top:1050px">
     <a data-nav="about-me" class="sticky-nav">• About Me</a>
     <a data-nav="directX-slide" class="sticky-nav">• DirectX Projects</a>
-    <a data-nav="pProjects-zoom" class="sticky-nav">• Past Projects</a>
+    <a data-nav="pProjects-zoom" class="sticky-nav">• Other Projects</a>
     <a data-nav="blender-zoom" class="sticky-nav">• Blender</a>
   </div>
 
-  <!-- Past Projects Navigation -->
-  <div class="sticky-note" style="left:1850px; top:-400px">
+  <!-- Other Projects Navigation -->
+  <div class="sticky-note" style="left:1650px; top:-400px">
     <a data-nav="about-me" class="sticky-nav">• About Me</a>
     <a data-nav="directX-zoom" class="sticky-nav">• DirectX Projects</a>
     <a data-nav="shader-zoom" class="sticky-nav">• Shaders</a>
@@ -194,7 +211,7 @@ stickyNotes.innerHTML =`
 `;
 
 
-planeElement.append(centerCard, gfxProjectSection, shaderProjectSection, pastProjectsSection, blenderProjectSection, stickyNotes);
+planeElement.append(centerCard, dxProjectTitleSection, dxProject1Section, dxProject2Section, shaderProjectSection, pastProjectsSection, blenderProjectSection, stickyNotes);
 
 const planeObj = new CSS3DObject( planeElement );
 planeObj.position.set( 150, -100, 0 );

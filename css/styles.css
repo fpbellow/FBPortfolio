@@ -1,3 +1,5 @@
+/*https://www.deviantart.com/pkgam/art/Crumpled-Paper-Texture-429242491*/
+
 @import url(https://fonts.googleapis.com/css?family=Gloria+Hallelujah);
 
 html, body {
@@ -22,14 +24,16 @@ html, body {
   width: 540px;
   position: absolute;
   left: 562px;
-  top: 135px;
+  top: 235px;
   padding: 11px 43px 22px 38px; 
-  background-color: #fff;
+  background-image: url('/assets/Textures/crumpled_paper_texture_by_pkgam_d73k5mj-pre.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   border-radius: 38px;
   margin: 0 auto;
   color: #333;
   font-size: 18px;
-  box-sizing: border-box;
 }
 
 /* Profile Card Rows */
@@ -112,7 +116,7 @@ html, body {
 }
 
 .profile-card__resume {
-  padding: 0 0 0 220px;   
+  padding: 0 0 0 270px;   
   color: rgba(0, 0, 0, 0.41);
   font-size: 19px;        
 }
@@ -122,34 +126,66 @@ a {
   outline: none;
 }
 
-
-.project-card {
-  width: 1221px;
-  max-height: 850px;
-  padding: 11px 115px 54px 115px; 
-  background-color: #fff;
+.project-title-card {
+  width: 500px;
+  height: 99px;
+  background-image: url('/assets/Textures/crumpled_paper_texture_by_pkgam_d73k5mj-pre.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   border-radius: 38px;
   margin: 0 auto;
-  color: #333;
-  font-size: 38px; 
   box-sizing: border-box;
   position: absolute;
-  left: -1387px;
-  top: -841px;
+  left: -802px;
+  top: -895px;
 }
 
 .project-title {
   font-size: 38px; 
-  margin-bottom: 19px; 
+  margin-bottom: 2px; 
+  padding-left: 11px;
+  text-align: center;
 }
 
 .project-divider {
   height: 5px; 
-  width: 100%;
-  margin: 22px 0; 
+  width: 80%; 
   background-color: #000;
   opacity: 1;
+  margin: 5px auto 0 auto;
 }
+
+.project-card-1 {
+  width: 900px;
+  max-height: 1850px;
+  padding: 11px 80px 54px 80px;
+  background-image: url('/assets/Textures/crumpled_paper_texture_by_pkgam_d73k5mj-pre.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #333;
+  box-sizing: border-box;
+  position: absolute;
+  left: -1427px;
+  top: -785px;
+}
+
+.project-card-2 {
+  width: 1118px;
+  max-height: 1850px;
+  padding: 11px 80px 54px 80px;
+  background-image: url('/assets/Textures/crumpled_paper_texture_by_pkgam_d73k5mj-pre.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #333;
+  box-sizing: border-box;
+  position: absolute;
+  left: -505px;
+  top: -770px;
+}
+
 
 .project-subtitle {
   font-size: 29px; 
@@ -158,7 +194,7 @@ a {
 }
 
 .project-description {
-  font-size: 19px;
+  font-size: 14px;
   padding-bottom: 11px; 
 }
 
@@ -183,15 +219,17 @@ a {
   width: 1200px;
   max-height: 777px;
   padding: 11px 115px 54px 115px; 
-  background-color: #fff;
-  border-radius: 38px;
+  background-image: url('/assets/Textures/crumpled_paper_texture_by_pkgam_d73k5mj-pre.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   margin: 0 auto;
   color: #333;
   font-size: 38px; 
   box-sizing: border-box;
   position: absolute;
-  left: -1103px;
-  top: 812px;
+  left: -1044px;
+  top: 741px;
 }
 
 
@@ -199,15 +237,17 @@ a {
   width: 800px;
   max-height: 930px;
   padding: 11px 115px 54px 115px; 
-  background-color: #fff;
-  border-radius: 38px;
+  background-image: url('/assets/Textures/crumpled_paper_texture_by_pkgam_d73k5mj-pre.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   margin: 0 auto;
   color: #333;
   font-size: 38px; 
   box-sizing: border-box;
   position: absolute;
-  left: 2053px;
-  top: -879px;
+  left: 1853px;
+  top: -779px;
 }
 
 
@@ -215,8 +255,10 @@ a {
   width: 1200px;
   max-height: 800px;
   padding: 11px 115px 54px 115px; 
-  background-color: #fff;
-  border-radius: 38px;
+  background-image: url('/assets/Textures/crumpled_paper_texture_by_pkgam_d73k5mj-pre.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   margin: 0 auto;
   color: #333;
   font-size: 38px; 
