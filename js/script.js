@@ -161,7 +161,7 @@ pastProjectsSection2.className = "past-projects-card-2";
 pastProjectsSection2.innerHTML =`
   <h2 class="project-subtitle"> OpenGL: </h2>
   <div class="project-description">
-    A simplified form of planetary bodies rendered in OpenGL with the use of the Assimp model loading library. 
+    A simplified form of planetary bodies rendered in OpenGL with the use of the Assimp model loading library. <a href="https://github.com/fpbellow/SolarSimGL" target="_blank" style="color: #3f12ff; text-decoration: none;"> Github repo </a>.  
   </div>
   <div class="project-images">
     <img src="https://github.com/user-attachments/assets/18eca795-0e11-4564-b171-bddba803ba0a"  height="258" width="458"/>
