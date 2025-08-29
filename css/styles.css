@@ -1,6 +1,6 @@
 /*https://www.deviantart.com/pkgam/art/Crumpled-Paper-Texture-429242491*/
 
-@import url(https://fonts.googleapis.com/css?family=Gloria+Hallelujah);
+@import url(https://fonts.googleapis.com/css?family=Tagesschrift);
 
 html, body {
   margin: 0;
@@ -168,7 +168,7 @@ a {
   box-sizing: border-box;
   position: absolute;
   left: -1427px;
-  top: -785px;
+  top: -750px;
 }
 
 .project-card-2 {
@@ -233,10 +233,10 @@ a {
 }
 
 
-.past-projects-card {
+.past-projects-card-1 {
   width: 800px;
   max-height: 930px;
-  padding: 11px 115px 54px 115px; 
+  padding: 11px 80px 54px 80px;
   background-image: url('/assets/Textures/crumpled_paper_texture_by_pkgam_d73k5mj-pre.jpg');
   background-size: cover;
   background-repeat: no-repeat;
@@ -246,10 +246,26 @@ a {
   font-size: 38px; 
   box-sizing: border-box;
   position: absolute;
-  left: 1853px;
-  top: -779px;
+  left: 2000px;
+  top: -862px;
 }
 
+.past-projects-card-2 {
+  width: 800px;
+  max-height: 930px;
+  padding: 11px 80px 54px 80px;
+  background-image: url('/assets/Textures/crumpled_paper_texture_by_pkgam_d73k5mj-pre.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0 auto;
+  color: #333;
+  font-size: 38px; 
+  box-sizing: border-box;
+  position: absolute;
+  left: 1150px;
+  top: -642px;
+}
 
 .blender-card {
   width: 1200px;
@@ -269,7 +285,7 @@ a {
 }
 
 .sticky-note{
-  font:20px 'Gloria Hallelujah', cursive; 
+  font:20px 'Tagesschrift', cursive; 
   line-height:2;
   border:0;
   border-radius:3px;

@@ -135,9 +135,9 @@ shaderProjectSection.innerHTML = `
   </div>
 `;
 
-const pastProjectsSection = document.createElement('div');
-pastProjectsSection.className = "past-projects-card";
-pastProjectsSection.innerHTML =`
+const pastProjectsSection1 = document.createElement('div');
+pastProjectsSection1.className = "past-projects-card-1";
+pastProjectsSection1.innerHTML =`
   <h1 class="project-title">Other projects</h1>
   <div class="project-divider"></div>
   <h2 class="project-subtitle"> Unity: </h2>
@@ -153,6 +153,18 @@ pastProjectsSection.innerHTML =`
   </div>
   <div class="project-images">
     <img src="https://github.com/fpbellow/HelloRayTracing/raw/main/result.png"  height="258" width="458"/>
+  </div>
+`;
+
+const pastProjectsSection2 = document.createElement('div');
+pastProjectsSection2.className = "past-projects-card-2";
+pastProjectsSection2.innerHTML =`
+  <h2 class="project-subtitle"> OpenGL: </h2>
+  <div class="project-description">
+    A simplified form of planetary bodies rendered in OpenGL with the use of the Assimp model loading library. 
+  </div>
+  <div class="project-images">
+    <img src="https://github.com/user-attachments/assets/18eca795-0e11-4564-b171-bddba803ba0a"  height="258" width="458"/>
   </div>
 `;
 
@@ -178,7 +190,7 @@ stickyNotes.innerHTML =`
   </div>
 
   <!-- DirectX Navigation -->
-  <div class="sticky-note" style="left:-720px; top:-240px">
+  <div class="sticky-note" style="left:-720px; top:-200px">
     <a data-nav="about-me" class="sticky-nav">• About Me</a>
     <a data-nav="shader-slide" class="sticky-nav">• Shaders</a>
     <a data-nav="pProjects-zoom" class="sticky-nav">• Other Projects</a>
@@ -194,7 +206,7 @@ stickyNotes.innerHTML =`
   </div>
 
   <!-- Other Projects Navigation -->
-  <div class="sticky-note" style="left:1650px; top:-400px">
+  <div class="sticky-note" style="left:1770px; top:-400px">
     <a data-nav="about-me" class="sticky-nav">• About Me</a>
     <a data-nav="directX-zoom" class="sticky-nav">• DirectX Projects</a>
     <a data-nav="shader-zoom" class="sticky-nav">• Shaders</a>
@@ -211,7 +223,7 @@ stickyNotes.innerHTML =`
 `;
 
 
-planeElement.append(centerCard, dxProjectTitleSection, dxProject1Section, dxProject2Section, shaderProjectSection, pastProjectsSection, blenderProjectSection, stickyNotes);
+planeElement.append(centerCard, dxProjectTitleSection, dxProject1Section, dxProject2Section, shaderProjectSection, pastProjectsSection1, pastProjectsSection2, blenderProjectSection, stickyNotes);
 
 const planeObj = new CSS3DObject( planeElement );
 planeObj.position.set( 150, -100, 0 );
