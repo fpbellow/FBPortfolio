@@ -65,7 +65,7 @@ centerCard.innerHTML =  `
     </div>
     <div class="profile-card__col profile-card__col--icons">
       <a href="https://github.com/fpbellow/" target="_blank" rel="noopener noreferrer">
-        <img class="profile-card__icon" src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png"/>
+        <img class="profile-card__icon" src="/assets/Images/GitHub-Mark-ea2971cee799.png"/>
       </a>
       <a href="https://www.linkedin.com/in/faustin-bellow-048019188/" target="_blank" rel="noopener noreferrer">
         <img class="profile-card__icon" src="https://www.svgrepo.com/show/157006/linkedin.svg"/>
