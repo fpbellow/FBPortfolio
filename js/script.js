@@ -149,10 +149,10 @@ pastProjectsSection1.innerHTML =`
   </div>
    <h2 class="project-subtitle" > Raytracing: </h2>
   <div class="project-description">
-    Project following Peter Shirley's "Ray Tracing in One Weekend" book. <a href="https://github.com/fpbellow/HelloRayTracing" target="_blank" style="color: #3f12ff; text-decoration: none;"> Github repo </a>.
+    Following the Ray Tracing in One Weekend series by Peter Shirley, this my collection of projects of which I made personal changes and optimizations. <a href="https://github.com/fpbellow/RT-Basics-Projects" target="_blank" style="color: #3f12ff; text-decoration: none;"> Github repo </a>.
   </div>
   <div class="project-images">
-    <img src="https://github.com/fpbellow/HelloRayTracing/raw/main/result.png"  height="258" width="458"/>
+    <img src="https://github.com/fpbellow/RT-Basics-Projects/raw/main/RTWeekend/result.png"  height="258" width="458"/>
   </div>
 `;
 
