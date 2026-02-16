@@ -152,7 +152,8 @@ pastProjectsSection1.innerHTML =`
     Following the Ray Tracing in One Weekend series by Peter Shirley, this my collection of projects of which I made personal changes and optimizations. <a href="https://github.com/fpbellow/RT-Basics-Projects" target="_blank" style="color: #3f12ff; text-decoration: none;"> Github repo </a>.
   </div>
   <div class="project-images">
-    <img src="https://github.com/fpbellow/RT-Basics-Projects/raw/main/RTWeekend/result.png"  height="258" width="458"/>
+    <img src="https://github.com/fpbellow/RT-Basics-Projects/raw/main/RTWeekend/result.png"  height="165" width="265"/>
+    <img src="https://github.com/fpbellow/RT-Basics-Projects/raw/main/RTWeek/result.png"  height="165" width="265"/>
   </div>
 `;
 
