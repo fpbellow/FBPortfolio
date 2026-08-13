@@ -186,6 +186,21 @@ a {
   top: -770px;
 }
 
+.project-card-3 {
+  width: 900px;
+  max-height: 900px;
+  padding: 11px 80px 54px 80px;
+  background-image: url('/assets/Textures/crumpled_paper_texture_by_pkgam_d73k5mj-pre.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #333;
+  box-sizing: border-box;
+  position: absolute;
+  left: -1427px;
+  top: -60px;
+}
+
 
 .project-subtitle {
   font-size: 29px; 

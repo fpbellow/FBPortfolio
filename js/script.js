@@ -120,6 +120,15 @@ dxProject2Section.innerHTML = `
   </div>
 `;
 
+const dxProject3Section = document.createElement('div');
+dxProject3Section.className = "project-card-3";
+dxProject3Section.innerHTML = `
+  <h2 class="project-subtitle"><a href="https://github.com/fpbellow/LRN-Engine" target="_blank" style="text-decoration: none;"> • LRN-Engine<br/> </a> </h2>
+  <div class="project-description">
+    A custom rendering engine built from scratch as an ongoing learning project, currently centered on a DirectX 12 framework and rendering pipeline. Development is ongoing and screenshots will be added in the near future.
+  </div>
+`;
+
 const shaderProjectSection = document.createElement('div');
 shaderProjectSection.className = "shader-card";
 shaderProjectSection.innerHTML = `
@@ -191,7 +200,7 @@ stickyNotes.innerHTML =`
   </div>
 
   <!-- DirectX Navigation -->
-  <div class="sticky-note" style="left:-720px; top:-200px">
+  <div class="sticky-note" style="left:-520px; top:-80px">
     <a data-nav="about-me" class="sticky-nav">• About Me</a>
     <a data-nav="shader-slide" class="sticky-nav">• Shaders</a>
     <a data-nav="pProjects-zoom" class="sticky-nav">• Other Projects</a>
@@ -224,7 +233,7 @@ stickyNotes.innerHTML =`
 `;
 
 
-planeElement.append(centerCard, dxProjectTitleSection, dxProject1Section, dxProject2Section, shaderProjectSection, pastProjectsSection1, pastProjectsSection2, blenderProjectSection, stickyNotes);
+planeElement.append(centerCard, dxProjectTitleSection, dxProject1Section, dxProject2Section, dxProject3Section, shaderProjectSection, pastProjectsSection1, pastProjectsSection2, blenderProjectSection, stickyNotes);
 
 const planeObj = new CSS3DObject( planeElement );
 planeObj.position.set( 150, -100, 0 );
